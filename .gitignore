@@ -1,0 +1,10 @@
+# git ignore file
+[B|b]in/
+obj/
+*.suo
+*.user
+packages/NUnit*
+packages/Castle*
+packages/Fluent*
+packages/Selenium*
+packages/Spec*
