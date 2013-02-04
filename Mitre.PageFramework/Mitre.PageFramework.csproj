@@ -57,14 +57,15 @@
     <Compile Include="Actions\IScriptExecutor.cs" />
     <Compile Include="Actions\ScriptExecutor.cs" />
     <Compile Include="AppSettings.cs" />
+    <Compile Include="Elements\Component.cs" />
+    <Compile Include="Elements\Page.cs" />
+    <Compile Include="Elements\UiElement.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="INavigator.cs" />
     <Compile Include="Navigator.cs" />
-    <Compile Include="Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runner.cs" />
-    <Compile Include="UiElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

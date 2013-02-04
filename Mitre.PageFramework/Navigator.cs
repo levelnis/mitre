@@ -1,4 +1,5 @@
 using Mitre.PageFramework.Actions;
+using Mitre.PageFramework.Elements;
 using OpenQA.Selenium;
 
 namespace Mitre.PageFramework

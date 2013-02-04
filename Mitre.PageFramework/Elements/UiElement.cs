@@ -1,7 +1,7 @@
 using Mitre.PageFramework.Actions;
 using OpenQA.Selenium;
 
-namespace Mitre.PageFramework
+namespace Mitre.PageFramework.Elements
 {
     public abstract class UiElement
     {
@@ -30,11 +30,6 @@ namespace Mitre.PageFramework
         protected IElementFinder Find()
         {
             return elementFinder;
-        }
-
-        protected TComponent GetComponent<TComponent>() where TComponent : UiElement, new()
-        {
-            return new TComponent();
         }
 
         protected IWebElement FindContext(string contextId)

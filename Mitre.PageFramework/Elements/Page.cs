@@ -1,4 +1,4 @@
-﻿namespace Mitre.PageFramework
+namespace Mitre.PageFramework.Elements
 {
     public abstract class Page : UiElement
     {
@@ -11,5 +11,11 @@
         {
             get { return Browser.Url; }
         }
+
+        protected TComponent Component<TComponent>() where TComponent : Component, new()
+        {
+            return new TComponent();
+        }
+
     }
 }

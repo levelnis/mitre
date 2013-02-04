@@ -1,5 +1,6 @@
 using System;
 using Mitre.PageFramework.Actions;
+using Mitre.PageFramework.Elements;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
@@ -23,6 +24,11 @@ namespace Mitre.PageFramework
         public static INavigator Navigator
         {
             get { return navigator ?? (navigator = new Navigator(Host, Executor)); }
+        }
+
+        public static TPage Page<TPage>() where TPage : Page, new()
+        {
+            return new TPage();
         }
 
         public static void InitialiseHost(HostTypeOption hostType, int windowWidth = 1024, int windowHeight = 768)
