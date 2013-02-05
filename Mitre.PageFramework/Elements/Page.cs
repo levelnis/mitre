@@ -16,6 +16,5 @@ namespace Mitre.PageFramework.Elements
         {
             return new TComponent();
         }
-
     }
 }

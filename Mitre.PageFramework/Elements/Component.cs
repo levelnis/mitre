@@ -4,7 +4,7 @@ namespace Mitre.PageFramework.Elements
 {
     public abstract class Component : UiElement
     {
-         protected IWebElement Container(string selector)
+         protected IWebElement FindContainer(string selector)
          {
              return Find().TryFindElement(By.CssSelector(selector));
          }

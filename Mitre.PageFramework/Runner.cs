@@ -21,7 +21,7 @@ namespace Mitre.PageFramework
             get { return executor ?? (executor = new ScriptExecutor(Host)); }
         }
 
-        public static INavigator Navigator
+        internal static INavigator Navigator
         {
             get { return navigator ?? (navigator = new Navigator(Host, Executor)); }
         }
@@ -29,6 +29,16 @@ namespace Mitre.PageFramework
         public static TPage Page<TPage>() where TPage : Page, new()
         {
             return new TPage();
+        }
+
+        public static TPage GoTo<TPage>(By clickDestination) where TPage : Page, new()
+        {
+            return Navigator.To<TPage>(clickDestination);
+        }
+
+        public static TPage GoTo<TPage>(string relativeUrl) where TPage : Page, new()
+        {
+            return Navigator.To<TPage>(relativeUrl);
         }
 
         public static void InitialiseHost(HostTypeOption hostType, int windowWidth = 1024, int windowHeight = 768)

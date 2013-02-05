@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace Mitre.PageFramework
 {
-    public class Navigator : INavigator
+    internal class Navigator : INavigator
     {
         private readonly IWebDriver driver;
         private readonly IScriptExecutor executor;
