@@ -68,32 +68,32 @@ Pages
 SpecFlow Steps
 --------------
 
-        [Given(@"I am on the about us page")]
-        public void GivenIAmOnTheAboutUsPage()
-        {
-            Runner.GoTo<HomePage>(AppSettings.BaseUrl)
-                .GoToAboutUs();
-        }
+    [Given(@"I am on the about us page")]
+    public void GivenIAmOnTheAboutUsPage()
+    {
+        Runner.GoTo<HomePage>(AppSettings.BaseUrl)
+            .GoToAboutUs();
+    }
 
-        [Given(@"I enter the following message details")]
-        public void GivenIHaveEnteredSomethingAsTheName(Table table)
-        {
-            var row = table.Rows[0];
-			      Runner.Page<AboutUsPage>()
-				        .EnterName(row["Name"])
-				        .EnterEmailAddress(row["Email address"])
-				        .EnterMessage(row["Message"]);
-        }
-        
-        [When(@"I send the message")]
-        public void WhenISendTheMessage()
-        {
-             Runner.Page<AboutUsPage>()
-                .SendMessage();
-        }
+    [Given(@"I enter the following message details")]
+    public void GivenIHaveEnteredSomethingAsTheName(Table table)
+    {
+        var row = table.Rows[0];
+        Runner.Page<AboutUsPage>()
+            .EnterName(row["Name"])
+            .EnterEmailAddress(row["Email address"])
+            .EnterMessage(row["Message"]);
+    }
 
-        [Then(@"I should see a success message saying '(.*)'")]
-        public void ThenIShouldSeeASuccessMessageSayingSomething(string messageText)
-        {
-            Runner.Page<AboutUsPage>().SuccessMessage.ShouldEqual(messageText);
-        }
+    [When(@"I send the message")]
+    public void WhenISendTheMessage()
+    {
+        Runner.Page<AboutUsPage>()
+            .SendMessage();
+    }
+
+    [Then(@"I should see a success message saying '(.*)'")]
+    public void ThenIShouldSeeASuccessMessageSayingSomething(string messageText)
+    {
+        Runner.Page<AboutUsPage>().SuccessMessage.ShouldEqual(messageText);
+    }
