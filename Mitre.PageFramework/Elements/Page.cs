@@ -16,6 +16,11 @@ namespace Mitre.PageFramework.Elements
             get { return Browser.Url; }
         }
 
+        protected IWebElement ClickElement(string id)
+        {
+            return Execute().ActionOnLocator(By.Id(id), e => e.Click());
+        }
+
         protected TComponent Component<TComponent>() where TComponent : Component, new()
         {
             return new TComponent();
@@ -23,6 +28,21 @@ namespace Mitre.PageFramework.Elements
         protected IWebElement EnterTextData(string id, string data)
         {
             return Execute().ActionOnLocator(By.Id(id), e => e.ClearAndSendKeys(data));
+        }
+
+        protected string FindTextById(string id)
+        {
+            return Find().TryFindElement(By.Id(id)).Text;
+        }
+
+        protected string FindTextBySelector(string selector)
+        {
+            return Find().TryFindElement(By.CssSelector(selector)).Text;
+        }
+
+        protected TTargetPage GoToPageById<TTargetPage>(string id) where TTargetPage : UiElement, new()
+        {
+            return Navigate().To<TTargetPage>(By.Id(id));
         }
 
         protected IWebElement SelectOption(string id, string optionText)
@@ -46,21 +66,6 @@ namespace Mitre.PageFramework.Elements
         protected IWebElement SubmitForm(string containerId)
         {
             return Execute().ActionOnLocator(FindContext(containerId), By.CssSelector("button[type='submit']"), e => e.Click());
-        }
-
-        protected IWebElement ClickElement(string id)
-        {
-            return Execute().ActionOnLocator(By.Id(id), e => e.Click());
-        }
-
-        protected string FindTextBySelector(string selector)
-        {
-            return Find().TryFindElement(By.CssSelector(selector)).Text;
-        }
-
-        protected string FindTextById(string id)
-        {
-            return Find().TryFindElement(By.Id(id)).Text;
         }
     }
 }
