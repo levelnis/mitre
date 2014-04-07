@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Mitre.PageFramework")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("The Open University")]
+[assembly: AssemblyCompany("Levelnis Ltd.")]
 [assembly: AssemblyProduct("Mitre.PageFramework")]
-[assembly: AssemblyCopyright("Copyright © The Open University 2013")]
+[assembly: AssemblyCopyright("Copyright © Levelnis 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

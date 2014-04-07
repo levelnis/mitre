@@ -24,7 +24,7 @@ namespace Mitre.PageFramework.Actions
             return element == null ? null : CallActionOnLocator(element, action);
         }
 
-        private IWebElement CallActionOnLocator(IWebElement element, Action<IWebElement> action)
+        private static IWebElement CallActionOnLocator(IWebElement element, Action<IWebElement> action)
         {
             action(element);
             return element;

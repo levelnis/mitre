@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Mitre.PageFramework</id>
+    <version>1.0.0</version>
+    <authors>Simon Rigby</authors>
+    <owners>Levelnis</owners>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <projectUrl>https://github.com/levelnis/mitre</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple page framework for performing gherkin-based acceptance test driven development using Selenium WebDriver</description>
+    <copyright>Copyright Levelnis 2014</copyright>
+    <tags>atdd gherkin specflow selenium</tags>
+    <dependencies>
+      <dependency id="FluentAssertions" version="2.2.0.0" />
+      <dependency id="NUnit" version="2.6.3" />
+      <dependency id="Selenium.Support" version="2.41.0" />
+      <dependency id="Selenium.WebDriver" version="2.41.0" />
+      <dependency id="SpecFlow" version="1.9.0" />
+    </dependencies>
+    <references>
+      <reference file="Mitre.PageFramework.dll" />
+    </references>
+  </metadata>
+  <files>
+    <file src="..\Mitre.PageFramework\bin\Release\Mitre.PageFramework.dll" target="lib\net45" />
+    <file src="..\Mitre.PageFramework\bin\Release\Mitre.PageFramework.pdb" target="lib\net45" />
+  </files>
+</package>
