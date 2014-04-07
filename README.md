@@ -95,5 +95,5 @@ SpecFlow Steps
     [Then(@"I should see a success message saying '(.*)'")]
     public void ThenIShouldSeeASuccessMessageSayingSomething(string messageText)
     {
-        Runner.Page<AboutUsPage>().SuccessMessage.ShouldEqual(messageText);
+        Assert.That(Runner.Page<AboutUsPage>().SuccessMessage, Is.EqualTo(messageText));
     }
