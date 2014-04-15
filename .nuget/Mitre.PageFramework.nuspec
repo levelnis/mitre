@@ -12,6 +12,11 @@
     <description>A simple page framework for performing gherkin-based acceptance test driven development using Selenium WebDriver</description>
     <copyright>Copyright Levelnis 2014</copyright>
     <tags>atdd gherkin specflow selenium</tags>
+    <releaseNotes>
+      1.0.6 - Added methods to Navigator and Page that allow for clicking element via SendKeys(Keys.Enter) method. Use when Click() does not work.
+      1.0.7 - Added GoToPageByIdViaKeys method to Page that allows for clicking element via SendKeys(Keys.Enter) method. Use when Click() does not work.
+      1.0.8 - Changed SelectRadioLabelText to use Click again rather than SendKeys to stop the form submitting at that point.
+    </releaseNotes>
     <dependencies>
       <dependency id="FluentAssertions" version="2.2.0.0" />
       <dependency id="NUnit" version="2.6.3" />

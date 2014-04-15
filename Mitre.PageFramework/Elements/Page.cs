@@ -21,6 +21,16 @@ namespace Mitre.PageFramework.Elements
             return Execute().ActionOnLocator(By.Id(id), e => e.Click());
         }
 
+        /// <summary>
+        /// Clicks an element by sending the enter key. Use when ClickElement does not work.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        protected IWebElement ClickElementViaKeys(string id)
+        {
+            return Execute().ActionOnLocator(By.Id(id), e => e.SendKeys(Keys.Enter));
+        }
+
         protected TComponent Component<TComponent>() where TComponent : Component, new()
         {
             return new TComponent();
@@ -45,6 +55,11 @@ namespace Mitre.PageFramework.Elements
             return Navigate().To<TTargetPage>(By.Id(id));
         }
 
+        protected TTargetPage GoToPageByIdViaKeys<TTargetPage>(string id) where TTargetPage : UiElement, new()
+        {
+            return Navigate().ViaKeysTo<TTargetPage>(By.Id(id));
+        }
+
         protected IWebElement SelectOption(string id, string optionText)
         {
             return Execute().ActionOnLocator(By.Id(id), e => new SelectElement(e).SelectByText(optionText));
@@ -66,6 +81,16 @@ namespace Mitre.PageFramework.Elements
         protected IWebElement SubmitForm(string containerId)
         {
             return Execute().ActionOnLocator(FindContext(containerId), By.CssSelector("button[type='submit']"), e => e.Click());
+        }
+
+        /// <summary>
+        /// Submits form by sending the enter key. Use when SubmitForm does not work.
+        /// </summary>
+        /// <param name="containerId"></param>
+        /// <returns></returns>
+        protected IWebElement SubmitFormViaKeys(string containerId)
+        {
+            return Execute().ActionOnLocator(FindContext(containerId), By.CssSelector("button[type='submit']"), e => e.SendKeys(Keys.Enter));
         }
     }
 }

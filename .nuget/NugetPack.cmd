@@ -1,1 +1,1 @@
-nuget pack Mitre.PageFramework.nuspec -Version 1.0.5
+nuget pack Mitre.PageFramework.nuspec -Version 1.0.8
