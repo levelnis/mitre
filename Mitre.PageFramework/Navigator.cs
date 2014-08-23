@@ -33,6 +33,20 @@ namespace Mitre.PageFramework
             return new TPage();
         }
 
+        public TPage ViaKeysTo<TPage>(string contextId, By clickDestination) where TPage : UiElement, new()
+        {
+            var contextElement = driver.TryFindElement(By.Id(contextId));
+            executor.ActionOnLocator(contextElement, clickDestination, e => e.SendKeys(Keys.Enter));
+            return new TPage();
+        }
+
+        public TPage To<TPage>(string contextId, By clickDestination) where TPage : UiElement, new()
+        {
+            var contextElement = driver.TryFindElement(By.Id(contextId));
+            executor.ActionOnLocator(contextElement, clickDestination, e => e.Click());
+            return new TPage();
+        }
+
         public TPage To<TPage>(string relativeUrl) where TPage : UiElement, new()
         {
             driver.Navigate().GoToUrl(relativeUrl);

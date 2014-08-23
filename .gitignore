@@ -8,3 +8,4 @@ packages/Castle*
 packages/Fluent*
 packages/Selenium*
 packages/Spec*
+*.nupkg

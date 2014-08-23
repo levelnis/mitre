@@ -60,6 +60,26 @@ namespace Mitre.PageFramework.Elements
             return Navigate().ViaKeysTo<TTargetPage>(By.Id(id));
         }
 
+        protected TTargetPage GoToPageByLinkText<TTargetPage>(string linkText) where TTargetPage : UiElement, new()
+        {
+            return Navigate().To<TTargetPage>(By.LinkText(linkText));
+        }
+
+        protected TTargetPage GoToPageByLinkText<TTargetPage>(string contextId, string linkText) where TTargetPage : UiElement, new()
+        {
+            return Navigate().To<TTargetPage>(contextId, By.LinkText(linkText));
+        }
+
+        protected TTargetPage GoToPageByLinkTextViaKeys<TTargetPage>(string linkText) where TTargetPage : UiElement, new()
+        {
+            return Navigate().ViaKeysTo<TTargetPage>(By.LinkText(linkText));
+        }
+
+        protected TTargetPage GoToPageByLinkTextViaKeys<TTargetPage>(string contextId, string linkText) where TTargetPage : UiElement, new()
+        {
+            return Navigate().ViaKeysTo<TTargetPage>(contextId, By.LinkText(linkText));
+        }
+
         protected IWebElement SelectOption(string id, string optionText)
         {
             return Execute().ActionOnLocator(By.Id(id), e => new SelectElement(e).SelectByText(optionText));

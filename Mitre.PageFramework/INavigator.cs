@@ -15,6 +15,10 @@ namespace Mitre.PageFramework
 
         TPage To<TPage>(By clickDestination) where TPage : UiElement, new();
 
+        TPage ViaKeysTo<TPage>(string contextId, By clickDestination) where TPage : UiElement, new();
+
+        TPage To<TPage>(string contextId, By clickDestination) where TPage : UiElement, new();
+
         TPage To<TPage>(string relativeUrl) where TPage : UiElement, new();
     }
 }
